@@ -1,3 +1,5 @@
+// components/layout/Banner.tsx
+
 import Image from 'next/image';
 
 export default function Banner() {

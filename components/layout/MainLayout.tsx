@@ -1,6 +1,9 @@
 // components/layout/MainLayout.tsx
+"use client"
+
 import { Navigation } from './Navigation';
 import Banner from './Banner';
+import Footer from './Footer';
 import { ReactNode } from 'react';
 
 interface MainLayoutProps {
@@ -15,6 +18,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
       <main className="container mx-auto px-4 py-8 mb-16 sm:mb-0">
         {children}
       </main>
+      <Footer />
     </div>
   );
 }
