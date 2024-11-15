@@ -1,6 +1,7 @@
 // app/(main)/kontakt/page.tsx
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import TallyFormEmbed from './TallyFormEmbed';
 
 export const metadata: Metadata = {
   title: 'Kontakt - Elke Bitterhof',
@@ -23,15 +24,7 @@ export default function KontaktPage() {
           </div>
 
           <div className="bg-white rounded-lg shadow-xl p-8 border border-gray-100">
-            <iframe 
-              data-tally-src="https://tally.so/embed/m612BJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-              loading="lazy"
-              width="100%"
-              height="228"
-              frameBorder="0"
-              title="Kontaktformular"
-              className="w-full"
-            />
+            <TallyFormEmbed />
           </div>
         </div>
       </div>
