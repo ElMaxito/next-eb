@@ -1,5 +1,3 @@
-// components/Banner.tsx
-
 import Image from 'next/image';
 
 export default function Banner() {
@@ -15,6 +13,7 @@ export default function Banner() {
             priority
             className="w-full h-auto"
           />
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent" />
         </div>
       </div>
     </div>

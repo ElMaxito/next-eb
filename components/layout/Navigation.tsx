@@ -1,8 +1,10 @@
 // components/layout/Navigation.tsx
+
 'use client';
 
 import { startTransition, useTransition } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 const navigation = [
   { name: 'Aktuell', href: '/aktuell' },
@@ -16,6 +18,16 @@ export function Navigation() {
   const pathname = usePathname();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleNavigation = (href: string) => {
     if (href === pathname) return;
@@ -40,7 +52,11 @@ export function Navigation() {
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="hidden sm:block sticky top-0 z-50 bg-black border-b border-gray-800">
+      <nav 
+        className={`hidden sm:block sticky top-0 z-50 transition-all duration-300
+                   ${isScrolled ? 'bg-black/90 backdrop-blur-sm' : 'bg-black'}
+                   border-b border-gray-800`}
+      >
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between h-16">
             <div className="flex items-center space-x-1">
@@ -66,10 +82,11 @@ export function Navigation() {
         </div>
       </nav>
 
-      {/* Mobile Layout */}
+      {/* Mobile Navigation */}
       <div className="sm:hidden">
-        {/* Mobile Title Bar */}
-        <div className="sticky top-0 z-40 bg-black border-b border-gray-800">
+        <div className={`sticky top-0 z-40 transition-all duration-300
+                        ${isScrolled ? 'bg-black/90 backdrop-blur-sm' : 'bg-black'}
+                        border-b border-gray-800`}>
           <div className="flex justify-center h-14">
             <span className="text-white text-xl tracking-widest font-della-respira self-center">
               elke-bitterhof.de
@@ -77,8 +94,7 @@ export function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Bottom Navigation */}
-        <div className="fixed bottom-0 left-0 right-0 bg-black border-t border-gray-800 z-50">
+        <nav className="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-sm border-t border-gray-800 z-50">
           <div className="grid grid-cols-5 py-4">
             {navigation.map((item) => (
               <div key={item.name} className="text-sm text-center">
@@ -86,7 +102,7 @@ export function Navigation() {
               </div>
             ))}
           </div>
-        </div>
+        </nav>
       </div>
     </>
   );
