@@ -1,17 +1,25 @@
 // app/layout.tsx
-
 import './globals.css';
 import type { Metadata } from 'next';
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Raleway, Della_Respira } from 'next/font/google';
+import MainLayout from '@/components/layout/MainLayout';
 
-// Initialize fonts
-const playfair = Playfair_Display({ subsets: ['latin'] });
-const inter = Inter({ subsets: ['latin'] });
+const raleway = Raleway({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-raleway',
+});
+
+const dellaRespira = Della_Respira({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-della-respira',
+});
 
 export const metadata: Metadata = {
   title: 'Elke Bitterhof - Journalistin & Autorin',
-  description:
-    'Offizielle Website von Elke Bitterhof - Journalistin, Autorin und Moderatorin',
+  description: 'Offizielle Website von Elke Bitterhof - Journalistin, Autorin und Moderatorin',
 };
 
 export default function RootLayout({
@@ -20,8 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+    <html lang="de" className={`${raleway.variable} ${dellaRespira.variable}`}>
+      <body className="font-raleway antialiased">
+        <MainLayout>{children}</MainLayout>
+      </body>
     </html>
   );
 }

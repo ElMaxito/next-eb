@@ -1,7 +1,7 @@
-// components/MainLayout.tsx
+// components/layout/MainLayout.tsx
 
+import { Navigation } from './Navigation';
 import Banner from './Banner';
-import Navigation from './Navigation';
 import { ReactNode } from 'react';
 
 interface MainLayoutProps {
