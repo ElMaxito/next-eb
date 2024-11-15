@@ -23,7 +23,7 @@ export default function VitaPage() {
         <div className="prose prose-lg max-w-none">
           <p>
             Nach ihrem Tourismus-Diplom an der Verkehrshochschule Dresden studierte Elke Bitterhof 
-            Gesang an der Musikhochschule „Hanns Eisler" in Berlin und absolvierte ihr Staatsexamen 
+            Gesang an der Musikhochschule &ldquo;Hanns Eisler&rdquo; in Berlin und absolvierte ihr Staatsexamen 
             mit Bravour. Sie stand mit Harry Belafonte auf der Bühne, sang neben Ernst Busch und 
             moderierte u.a. Konzerte von Silvio Rodriguez und Mercedes Sosa.
           </p>
@@ -48,10 +48,10 @@ export default function VitaPage() {
 
           <p>
             Zurück in Berlin schrieb sie auf Bitte der Friedensglockengesellschaft e.V das Lied 
-            "Heiwa – Frieden" (Youtube), in Gedenken an den Atombombenabwurf in Hiroshima. 
+            &ldquo;Heiwa – Frieden&rdquo; (Youtube), in Gedenken an den Atombombenabwurf in Hiroshima. 
             Inzwischen ist Elke Bitterhof auch eine gefragte Autorin für Hörfunk, Printmedien und 
             poetische Nachdichtungen. So schrieb sie u.a. für José Carreras die spanische Fassung 
-            des Pop-Klassikers „Als ich fortging".
+            des Pop-Klassikers &ldquo;Als ich fortging&rdquo;.
           </p>
 
           <p>
@@ -61,14 +61,14 @@ export default function VitaPage() {
 
           <p>
             Seit 1998 agierte sie als Moderatorin der monatlichen MDR-Fernsehsendung 
-            „selbstbestimmt". Nach elf Jahren entschloss sich Elke Bitterhof die terminliche 
+            &ldquo;selbstbestimmt&rdquo;. Nach elf Jahren entschloss sich Elke Bitterhof die terminliche 
             Bindung an die Redaktion zu beenden und sich mehr der internationalen Fernseharbeit 
             zuzuwenden.
           </p>
 
           <p>
-            2008 wurde sie in Santiago de Chile in den Vorstand der "World Association of Woman 
-            and Writers" berufen.
+            2008 wurde sie in Santiago de Chile in den Vorstand der &ldquo;World Association of Woman 
+            and Writers&rdquo; berufen.
           </p>
 
           <p>
