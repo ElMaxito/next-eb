@@ -1,14 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'wewhpssvfvsmxhqhdtwu.supabase.co',
-          pathname: '/storage/v1/object/public/**',
-        },
-      ],
-    },
-  };
-  
-  module.exports = nextConfig;
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'wewhpssvfvsmxhqhdtwu.supabase.co',
+        pathname: '/storage/v1/object/public/**',
+      },
+    ],
+  },
+  webpack: (config) => {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      bufferutil: false,
+      'utf-8-validate': false,
+    };
+    return config;
+  },
+};
+
+module.exports = nextConfig;
