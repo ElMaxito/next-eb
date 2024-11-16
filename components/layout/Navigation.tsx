@@ -1,5 +1,4 @@
 // components/layout/Navigation.tsx
-
 'use client';
 
 import { startTransition, useTransition } from 'react';
@@ -24,7 +23,6 @@ export function Navigation() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -42,10 +40,15 @@ export function Navigation() {
       disabled={isPending}
       className={`text-white hover:opacity-75 transition-all duration-300 ease-in-out
                  appearance-none bg-transparent disabled:cursor-not-allowed
+                 relative group
                  ${isPending ? 'opacity-50' : ''}
                  ${pathname === item.href ? 'font-semibold' : 'font-light'}`}
     >
       {item.name}
+      <span 
+        className={`absolute -bottom-1 left-0 h-[2px] bg-white/90 transition-all duration-300
+                   ${pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'}`} 
+      />
     </button>
   );
 
