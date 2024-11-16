@@ -47,7 +47,7 @@ export default function PostCard({ post }: { post: Post }) {
           </div>
         )}
 
-        {/* Image Column */}
+        {/* Image Column - Now with lazy loading */}
         {post.image_url && (
           <div className={`${post.text ? 'w-1/2' : 'w-3/4'}`}>
             <div className="relative">
@@ -57,6 +57,8 @@ export default function PostCard({ post }: { post: Post }) {
                 width={800}
                 height={600}
                 className="max-h-96 w-auto object-contain"
+                loading="lazy"  // Added lazy loading
+                sizes="(max-width: 768px) 100vw, 50vw"  // Added sizes for better responsive loading
               />
             </div>
           </div>
