@@ -1,8 +1,6 @@
 // components/posts/PostCard.tsx
-
 import Image from 'next/image';
-import { format } from 'date-fns';
-import { de } from 'date-fns/locale';
+import { formatGermanDate } from '@/utils/dateFormatter';
 
 export interface Post {
   id: number;
@@ -14,14 +12,13 @@ export interface Post {
 
 function parseMarkdown(text: string) {
   return text
-  .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
-  .replace(/\*(.*?)\*/g, '<em>$1</em>')              // Italic
-  .replace(/\n/g, '<br />');                         // Line breaks
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')              // Italic
+    .replace(/\n/g, '<br />');                         // Line breaks
 }
 
 export default function PostCard({ post }: { post: Post }) {
-  const date = new Date(post.date);
-  const formattedDate = format(date, 'd. MMMM yyyy', { locale: de });
+  const formattedDate = formatGermanDate(post.date);
 
   return (
     <article className="bg-white rounded-lg shadow-xl overflow-hidden p-8 border border-gray-100">
