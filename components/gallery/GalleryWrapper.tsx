@@ -2,27 +2,29 @@
 'use client';
 
 import { Gallery, Item } from 'react-photoswipe-gallery';
+import type { UIElementData } from 'photoswipe';
 import 'photoswipe/dist/photoswipe.css';
 import type { GalleryImage } from '@/types/gallery';
+import type PhotoSwipe from 'photoswipe';
 
 interface GalleryWrapperProps {
   images: GalleryImage[];
 }
 
-const uiElements = [
+const uiElements: UIElementData[] = [
   {
     name: 'caption',
     order: 9,
     isButton: false,
-    appendTo: 'wrapper',
-    onInit: (el, pswp) => {
+    appendTo: 'wrapper' as const,
+    onInit: (el: HTMLElement, pswp: PhotoSwipe): void => {
       const caption = document.createElement('div');
       caption.className = 'fixed bottom-0 left-0 right-0 bg-black/80 text-white px-4 py-3 text-center';
       el.appendChild(caption);
 
       pswp.on('change', () => {
-        const currSlideElement = pswp.currSlide.data;
-        caption.textContent = currSlideElement.caption || '';
+        const currSlideElement = pswp.currSlide?.data;
+        caption.textContent = currSlideElement?.caption || '';
       });
     },
   }
@@ -40,16 +42,16 @@ export default function GalleryWrapper({ images }: GalleryWrapperProps) {
             width={image.width}
             height={image.height}
             alt={image.title}
-            caption={image.title} // Changed from title to caption
+            caption={image.title}
           >
-            {({ ref: itemRef, open }) => (
+            {({ ref, open }) => (
               <div 
                 onClick={open}
                 className="cursor-pointer rounded-lg overflow-hidden relative group flex flex-col"
               >
                 <div className="aspect-square relative">
                   <img
-                    ref={itemRef as React.RefObject<HTMLImageElement>}
+                    ref={ref}
                     src={image.image_url}
                     alt={image.title}
                     className="w-full h-full object-cover group-hover:opacity-95 transition-opacity"
