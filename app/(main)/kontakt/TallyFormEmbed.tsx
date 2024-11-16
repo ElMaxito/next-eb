@@ -43,7 +43,7 @@ function TallyForm() {
     <>
       {isLoading && (
         <div className="h-[228px] flex items-center justify-center text-gray-600">
-          Laden...
+          Wird geladen...
         </div>
       )}
       <iframe 

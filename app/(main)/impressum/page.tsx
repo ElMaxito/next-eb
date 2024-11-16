@@ -26,7 +26,6 @@ export default function ImpressumPage() {
         <section>
           <h2 className="text-2xl font-della-respira mb-4">Kontakt</h2>
           <p>
-            E-Mail: info@elke-bitterhof.de<br />
             Internet: www.elke-bitterhof.de
           </p>
         </section>
