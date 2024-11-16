@@ -15,7 +15,14 @@ export default function Banner() {
             priority
             className="w-full h-auto"
           />
+          {/* Bottom gradient */}
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent" />
+          
+          {/* Left gradient */}
+          <div className="absolute top-0 left-0 bottom-0 w-16 bg-gradient-to-r from-black to-transparent" />
+          
+          {/* Right gradient */}
+          <div className="absolute top-0 right-0 bottom-0 w-16 bg-gradient-to-l from-black to-transparent" />
         </div>
       </div>
     </div>
