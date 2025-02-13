@@ -6,7 +6,7 @@ async function getPosts() {
   const { data, error } = await supabase
     .from('posts')
     .select('*')
-    .order('date', { ascending: false });
+    .order('display_order', { ascending: false });
 
   if (error) throw error;
   return data as Post[];
