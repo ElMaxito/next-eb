@@ -28,15 +28,15 @@ Isabel Allende, "Die Insel unter dem Meer", Mario Vargas Llosa, "Das böse Mädc
     }
   },
   {
-    title: 'Goodbye DDR',
-    subtitle: 'Goodbye DDR - Prominente erzählen von ihrem Mauerfall',
+    title: 'Goodbye, DDR',
+    subtitle: 'Goodbye, DDR - Prominente erzählen von ihrem Mauerfall',
     description: `Dass Angela Merkel am Abend des 9. November 1989 in der Sauna war, ist weitgehend bekannt, aber wie haben andere Prominente dieses legendäre Datum erlebt?
 
 Elke Bitterhof, die Herausgeberin des Buches, erinnert sich an die unterhaltsamen Treffen u.a. mit Gregor Gysi, Uwe Steimle, Wim Wenders, Daniel Barenboim, Heinz-Rudolf Kunze und Regine Sylvester.
 
 Ganz anders als erwartet verlief der Tag für die Schauspielerin Anja Kling. 
 Sie war gerade aus der DDR in ihrem Trabi geflüchtet und hörte im Auffanglager in Bayern vom Mauerfall. Und nun?`,
-    imageUrl: '/goodbye.jpg',
+    imageUrl: '/goodbye2.png',
     details: {
     }
   },
@@ -53,6 +53,7 @@ Im Programm "Heut kein Ketchup, aber Haarklemmen" erzählt sie von ihrem Leben i
 
 Ein Abend, an dem man nochmal eintaucht in die vergangene Mauerzeit und die Ankunft im Westen. Kopfschüttelnd, amüsiert, ungläubig und doch authentisch. Live-Musik gibt's auch.`,
     imageUrl: '/ketchup.jpg',
+    photographer: 'Ute Mahler',
     details: {
     }
   },
@@ -67,19 +68,24 @@ const ProgrammeContent = ({ programme }: { programme: typeof programmes[0] }) =>
       transition={{ duration: 0.3 }}
       className="grid grid-cols-1 md:grid-cols-2 gap-8"
     >
-      <div>
-        <img 
-          src={programme.imageUrl} 
-          alt={programme.title}
-          className="w-full h-[400px] object-cover rounded-lg shadow-lg"
-        />
+      <div className="space-y-2">
+        <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden h-[420px] flex items-center justify-center">
+          <img 
+            src={programme.imageUrl} 
+            alt={programme.title}
+            className="w-[95%] h-[95%] object-contain"
+          />
+        </div>
+        {programme.photographer && (
+          <p className="text-sm text-gray-500 text-right italic">Foto: {programme.photographer}</p>
+        )}
       </div>
       <div className="space-y-8">
         <div className="space-y-2">
           <h2 className="text-2xl font-della-respira">{programme.subtitle.split(' - ')[0]}</h2>
           <p className="text-lg text-gray-600 italic">{programme.subtitle.split(' - ')[1]}</p>
         </div>
-        <div className="prose prose-lg">
+        <div className="prose prose-lg p-6 bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.12)] backdrop-blur-sm">
           <div className="whitespace-pre-line mb-8 leading-relaxed">{programme.description}</div>
           {programme.details?.artists && (
             <div 

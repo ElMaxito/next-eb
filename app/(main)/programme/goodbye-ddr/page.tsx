@@ -3,7 +3,7 @@
 export default function GoodbyeDDRPage() {
   return (
     <div className="max-w-6xl mx-auto py-8 px-4">
-      <h1 className="text-4xl font-della-respira mb-4">Goodbye DDR</h1>
+      <h1 className="text-4xl font-della-respira mb-4">Goodbye, DDR</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <img 
