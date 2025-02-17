@@ -17,7 +17,7 @@ export default async function AktuellPage() {
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4">
-      <h1 className="text-3xl font-della-respira mb-8">Aktuell</h1>
+      <h1 className="text-3xl font-della-respira mb-8">Live</h1>
       
       <div className="space-y-8">
         {posts.map((post) => (

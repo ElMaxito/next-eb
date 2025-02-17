@@ -4,6 +4,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Swiper styles */
+.programme-swiper {
+  padding: 2rem 0 4rem 0;
+}
+
+.programme-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #D1D5DB;
+  opacity: 1;
+}
+
+.programme-swiper .swiper-pagination-bullet-active {
+  background: #B7A369;
+}
+
+.programme-swiper .swiper-button-prev,
+.programme-swiper .swiper-button-next {
+  color: #B7A369;
+}
+
+.programme-swiper .swiper-button-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
 :root {
   --foreground-rgb: 51, 51, 51;
   --background-rgb: 255, 255, 255;
@@ -17,5 +43,15 @@ body {
 @layer utilities {
   .container {
     @apply max-w-7xl mx-auto;
+  }
+
+  /* Hide scrollbar while allowing scroll */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
   }
 }

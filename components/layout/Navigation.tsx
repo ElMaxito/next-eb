@@ -6,7 +6,8 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 const navigation = [
-  { name: 'Aktuell', href: '/aktuell' },
+  { name: 'Live', href: '/live' },
+  { name: 'Programme', href: '/programme' },
   { name: 'Vita', href: '/vita' },
   { name: 'Galerie', href: '/galerie' },
   { name: 'Kontakt', href: '/kontakt' },
@@ -40,7 +41,7 @@ export function Navigation() {
       disabled={isPending}
       className={`text-white hover:opacity-75 transition-all duration-300 ease-in-out
                  appearance-none bg-transparent disabled:cursor-not-allowed
-                 relative group
+                 relative group w-full min-h-[44px] text-[13px] sm:text-base
                  ${isPending ? 'opacity-50' : ''}
                  ${pathname === item.href ? 'font-semibold' : 'font-light'}`}
     >
@@ -98,13 +99,15 @@ export function Navigation() {
         </div>
 
         <nav className="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-sm border-t border-gray-800 z-50">
-          <div className="grid grid-cols-5 py-4">
+          <div className="grid grid-cols-6 py-3 px-1">
             {navigation.map((item) => (
-              <div key={item.name} className="text-sm text-center">
+              <div key={item.name} className="text-center px-1">
                 {navButton(item)}
               </div>
             ))}
           </div>
+          {/* Safe area padding for modern iOS devices */}
+          <div className="h-safe-area-inset-bottom bg-black/90" />
         </nav>
       </div>
     </>

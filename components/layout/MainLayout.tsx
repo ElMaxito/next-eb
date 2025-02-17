@@ -16,7 +16,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
     <div className="min-h-screen">
       <Banner />
       <Navigation />
-      <main className="container mx-auto px-4 py-8 mb-16 sm:mb-0">
+      <main className="container mx-auto px-4 py-1 mb-16 sm:mb-0">
         <PageTransition>
           {children}
         </PageTransition>
