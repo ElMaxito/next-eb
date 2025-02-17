@@ -81,10 +81,12 @@ const ProgrammeContent = ({ programme }: { programme: typeof programmes[0] }) =>
         </div>
         <div className="prose prose-lg">
           <div className="whitespace-pre-line mb-8 leading-relaxed">{programme.description}</div>
-          <div 
-            className="whitespace-pre-line mt-8 leading-relaxed" 
-            dangerouslySetInnerHTML={{ __html: programme.details.artists }} 
-          />
+          {programme.details?.artists && (
+            <div 
+              className="whitespace-pre-line mt-8 leading-relaxed" 
+              dangerouslySetInnerHTML={{ __html: programme.details.artists }} 
+            />
+          )}
         </div>
       </div>
     </motion.div>
