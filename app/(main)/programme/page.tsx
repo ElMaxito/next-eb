@@ -68,12 +68,12 @@ const ProgrammeContent = ({ programme }: { programme: typeof programmes[0] }) =>
       transition={{ duration: 0.3 }}
       className="grid grid-cols-1 md:grid-cols-2 gap-8"
     >
-      <div className="space-y-2">
-        <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden h-[420px] flex items-center justify-center">
+      <div>
+        <div className="bg-gray-50 rounded-lg shadow-lg overflow-hidden h-[250px] md:h-[380px] flex items-center justify-center">
           <img 
             src={programme.imageUrl} 
             alt={programme.title}
-            className="w-[95%] h-[95%] object-contain"
+            className="w-full h-full object-contain p-2"
           />
         </div>
         {programme.photographer && (
