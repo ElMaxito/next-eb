@@ -20,7 +20,7 @@ Spannende Lesung mit live-Musik
   {
     title: 'Buenos días, du Schöne',
     subtitle: 'Buenos dias du Schöne - Latinas in der Literatur',
-    description: `Um ihre Freude am Leben, ihre starken Gefühle, Wut, Trauer, Leidenschaft, um ihre Art zu lieben und vor allem um sie, die starken Frauen, die Latinas, geht es in der Lesung mit Live-Musik aus den Anden, ausgewählt und vorgestellt von Elke Bitterhof, Jose Miguel Marquez und David Sandoval.
+    description: `Um ihre Freude am Leben, ihre starken Gefühle, Wut, Trauer, Leidenschaft, um ihre Art zu lieben und vor allem um sie, die starken Frauen, die Latinas, geht es in der Lesung mit Live-Musik aus den Anden, ausgewählt und vorgestellt von Elke Bitterhof, Gitarristen <strong>Erich Scheuch</strong> (Chile) und der Pianistin <strong>Sibylle Kliem</strong>.
 
 Isabel Allende, "Die Insel unter dem Meer", Mario Vargas Llosa, "Das böse Mädchen", Hernán Rivera Letelier, "Die Filmerzählerin" – die Geschichten dieser und anderer Autoren sind wie Reisen in ferne Welten und doch so vergleichbar mit den Erlebnissen und Erfahrungen der Frauen hierzulande und in aller Welt.`,
     imageUrl: '/buenosdias.jpg',
