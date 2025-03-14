@@ -27,7 +27,7 @@ export default async function AktuellPage() {
   const { upcoming, past } = groupPostsByDate(posts);
 
   return (
-    <div className="max-w-6xl mx-auto py-12 px-4 sm:px-6">
+    <div className="max-w-6xl mx-auto py-6 px-4 sm:px-6">
       {/* Hero Section - Reduced Size */}
       <div className="relative mb-10 rounded-xl overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/80 to-purple-900/80 mix-blend-multiply z-10"></div>
